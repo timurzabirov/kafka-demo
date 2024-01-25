@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: kafka-demo
+  kafka:
+    bootstrap-servers: 'localhost:29093'
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: ${spring.application.name}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+kafka:
+  topic:
+    with-partitions: topic-partitions
+    without-partitions: topic-without-partitions
